@@ -1,0 +1,34 @@
+# k8s-app.yml
+#Deployment Controller
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app
+        image: node-app
+        ports:
+        - containerPort: 3000
+---
+##Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app
+  labels:
+    app: node-app
+spec:
+  selector:
+    app: node-app
+  ports:
+  - port: 3000
+    protocol: TCP
+    nodePort: 30003
+  type: LoadBalancer

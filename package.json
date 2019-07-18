@@ -1,0 +1,15 @@
+{
+  "name": "skaffold-tutorial",
+  "version": "1.0.0",
+  "description": "For K8s Learning Purpose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Fariz Izwan <malikperang@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
